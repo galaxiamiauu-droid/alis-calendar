@@ -1,292 +1,64 @@
 body{
-margin:0;
-padding:15px;
-background:transparent;
-font-family:Georgia,serif;
+    background:#f8f1ff;
+    font-family:Arial, sans-serif;
 }
 
-#calendar{
 
-width:280px;
-
-margin:auto;
-
-padding:18px;
-
-background:rgba(255,255,255,.80);
-
-border:2px solid #e4d8ff;
-
-border-radius:22px;
-
-box-shadow:
-
-0 0 25px rgba(211,191,255,.35);
-
-position:relative;
-
+.calendar{
+    width:500px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
 }
 
-@keyframes fade{
-
-from{
-
-opacity:0;
-transform:translateY(8px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
 
 .header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:15px;
-padding-bottom:8px;
-border-bottom:1px dashed #dbcfff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
+
 
 .header button{
-
-width:32px;
-height:32px;
-
-border-radius:50%;
-
-border:none;
-
-background:#f4efff;
-
-color:#9b82dd;
-
-font-size:18px;
-
-cursor:pointer;
-
-transition:.25s;
-
+    border:none;
+    background:#ead7ff;
+    padding:10px;
+    border-radius:50%;
 }
 
-.header button:hover{
 
-background:#d9c7ff;
-
-transform:scale(1.1);
-
+.weekdays,
+.days{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:10px;
+    margin-top:20px;
 }
 
-.month{
-font-size:20px;
-font-weight:bold;
-color:#9073d8;
-letter-spacing:1px;
-font-family:"Georgia",serif;
+
+.weekdays div{
+    text-align:center;
+    font-weight:bold;
 }
 
-.month::before{
-content:"♡ ";
+
+.day{
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    background:#f3e8ff;
+    cursor:pointer;
 }
 
-.month::after{
-content:" ♡";
+
+.day:hover{
+    background:#e3c8ff;
 }
 
-table{
-
-width:100%;
-
-border-collapse:separate;
-
-border-spacing:5px;
-
-}
-
-th{
-
-font-weight:normal;
-
-font-size:13px;
-
-color:#8f74d8;
-
-padding-bottom:6px;
-
-}
-
-td{
-
-width:32px;
-height:32px;
-
-border-radius:50%;
-
-background:rgba(255,255,255,.45);
-
-transition:.25s;
-
-cursor:pointer;
-
-font-size:14px;
-
-}
-
-td:hover{
-
-background:#efe7ff;
-
-transform:scale(1.15);
-
-box-shadow:0 0 10px rgba(190,170,255,.6);
-
-}
-
-.today{
-
-background:#cdb6ff !important;
-
-color:white;
-
-font-weight:bold;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-position:relative;
-
-}
-
-.hasPost{
-
-background:#f6efff;
-
-color:#9a80df;
-
-font-weight:bold;
-
-}
-
-.hasPost:hover{
-
-background:#e8dcff;
-
-}
-
-#tooltip{
-
-position:fixed;
-
-display:none;
-
-padding:10px 14px;
-
-background:rgba(255,255,255,.95);
-
-border:2px solid #d8c7ff;
-
-border-radius:16px;
-
-box-shadow:0 10px 20px rgba(0,0,0,.12);
-
-font-size:13px;
-
-color:#666;
-
-pointer-events:none;
-
-z-index:99999;
-
-animation:fade .25s;
-
-}
-.heart{
-
-td{
-position:relative;
-}
-
-.day-number{
-position:absolute;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-font-size:15px;
-z-index:2;
-}
 
 .heart{
-position:absolute;
-bottom:5px;
-right:5px;
-width:7px;
-height:7px;
-background:#d1bbff;
-transform:rotate(-45deg);
-animation:pulse 2.5s infinite;
-}
-
-.heart::before,
-.heart::after{
-content:"";
-position:absolute;
-width:7px;
-height:7px;
-background:#d1bbff;
-border-radius:50%;
-}
-
-.heart::before{
-top:-3px;
-left:0;
-}
-
-.heart::after{
-left:3px;
-top:0;
-}
-
-@keyframes pulse{
-
-0%{
-transform:rotate(-45deg) scale(1);
-}
-
-50%{
-transform:rotate(-45deg) scale(1.15);
-}
-
-100%{
-transform:rotate(-45deg) scale(1);
-}
-
-}
-
-#calendar::before{
-content:"୨୧";
-position:absolute;
-top:-12px;
-left:15px;
-background:white;
-padding:0 8px;
-color:#c3a5ff;
-font-size:18px;
-}
-
-#calendar::after{
-content:"♡";
-position:absolute;
-bottom:-12px;
-right:15px;
-background:white;
-padding:0 8px;
-color:#c3a5ff;
-font-size:18px;
+    margin-left:5px;
 }
