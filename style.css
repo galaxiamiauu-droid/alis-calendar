@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Nunito:wght@400;600;700&display=swap');
 
 body{
 background:#f8f1ff;
@@ -24,10 +24,15 @@ justify-content:space-between;
 align-items:center;
 }
 
-.header h2{
-    font-family:'Dancing Script', cursive;
-    font-size:32px;
-    color:#a477d1;
+#monthYear{
+    font-family:'Allura', cursive;
+    font-size:44px;
+    color:#9b6dcc;
+    text-align:center;
+    margin:0;
+    font-weight:normal;
+    text-transform:capitalize;
+    flex:1;
 }
 .header button{
     background:none;
