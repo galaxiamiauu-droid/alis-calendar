@@ -118,7 +118,7 @@ cls+=" hasPost";
 
 html+=`<td class="${cls}"
 data-day="${d}">
-${post?`<span class="heart"></span>`:d}
+${post ? `<div class="day-number">${d}</div><span class="heart"></span>` : `<div class="day-number">${d}</div>`}
 </td>`;
 
 if((start+d)%7===0 && d!==last.getDate()){
