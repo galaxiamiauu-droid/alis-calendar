@@ -8,14 +8,14 @@ font-family:'Nunito', sans-serif;
 /* tarjeta principal */
 .calendar{
     position:relative;
-    width:330px;
-    margin:35px auto;
-    background:rgba(255,255,255,0.35);
-    backdrop-filter:blur(12px);
-    padding:20px;
+    width:335px;
+    margin:30px auto;
+    padding:28px 24px;
+    background:rgba(255,255,255,.55);
+    backdrop-filter:blur(8px);
     border-radius:30px;
-    box-shadow:0 10px 35px rgba(170,120,220,0.12);
-    border:1px solid rgba(220,190,255,0.5);
+    border:1px solid #e8d8ff;
+    box-shadow:0 5px 18px rgba(184,145,230,.10);
 }
 /* titulo y botones */
 .header{
@@ -30,22 +30,20 @@ align-items:center;
     color:#a477d1;
 }
 .header button{
-border:none;
-background:#ead7ff;
-color:#8c5bb5;
-width:40px;
-height:40px;
-font-size:20px;
-border-radius:50%;
-cursor:pointer;
-transition:.3s;
+    background:none;
+    border:none;
+    color:#bb95e9;
+    font-size:26px;
+    width:auto;
+    height:auto;
+    cursor:pointer;
+    transition:.25s;
 }
 
 .header button:hover{
-background:#d8b5ff;
-transform:rotate(10deg) scale(1.1);
+    color:#9467cf;
+    transform:scale(1.15);
 }
-
 /* nombres de dias */
 .weekdays,
 .days{
@@ -63,18 +61,13 @@ color:#a27bc9;
 
 /* cuadritos de dias */
 .day{
-    height:38px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:12px;
-    background:rgba(245,234,255,0.45);
-    color:#76528f;
-    cursor:pointer;
-    transition:.3s;
-    position:relative;
-    box-shadow:none;
-    font-size:14px;
+    height:40px;
+    border-radius:14px;
+    background:rgba(255,255,255,.60);
+    color:#8a68bb;
+    font-size:15px;
+    font-weight:600;
+    transition:.25s;
 }
 
 .day:hover{
