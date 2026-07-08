@@ -1,0 +1,138 @@
+body{
+    margin:0;
+    padding:15px;
+    font-family:Georgia, serif;
+    background:transparent;
+}
+
+#calendar{
+
+    width:250px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(8px);
+
+    border:2px solid #d8c9ff;
+
+    border-radius:20px;
+
+    padding:15px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.cal-title{
+
+    text-align:center;
+
+    color:#8d74c8;
+
+    font-size:20px;
+
+    margin-bottom:5px;
+
+}
+
+.cal-month{
+
+    text-align:center;
+
+    color:#777;
+
+    margin-bottom:15px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    text-align:center;
+
+}
+
+th{
+
+    color:#8d74c8;
+
+    font-weight:normal;
+
+    padding-bottom:8px;
+
+}
+
+td{
+
+    width:32px;
+
+    height:32px;
+
+    border-radius:50%;
+
+    transition:.25s;
+
+    cursor:pointer;
+
+    color:#555;
+
+}
+
+td:hover{
+
+    background:#f4efff;
+
+}
+
+.today{
+
+    background:#cdbbff;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.hasPost{
+
+    color:#8d74c8;
+
+    font-weight:bold;
+
+}
+
+.hasPost:hover{
+
+    background:#ece3ff;
+
+}
+
+.tooltip{
+
+    position:absolute;
+
+    background:white;
+
+    border:1px solid #d8c9ff;
+
+    border-radius:12px;
+
+    padding:8px;
+
+    font-size:12px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+    display:none;
+
+    max-width:180px;
+
+    z-index:99999;
+
+}
