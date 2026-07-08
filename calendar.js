@@ -2,23 +2,33 @@
 // CALENDARIO DE ALIS 💜
 // =====================================
 
-const posts = [
+const posts = [];
 
-{
-day:5,
-month:7,
-year:2026,
-title:"Hola.",
-url:"https://admeliorali.blogspot.com/2026/07/hola.html"
-},
+function addPost(day, month, year, title, url){
 
-{
-day:7,
-month:7,
-year:2026,
-title:"Hellou HeLLOU",
-url:"https://admeliorali.blogspot.com/2026/07/hola-que-tal-como-estas-jsjs.html"
-},
+    posts.push({
+        day,
+        month,
+        year,
+        title,
+        url
+    });
+
+}addPost(
+5,
+7,
+2026,
+"Hola.",
+"https://admeliorali.blogspot.com/2026/07/hola.html"
+);
+
+addPost(
+7,
+7,
+2026,
+"Hellou HeLLOU",
+"https://admeliorali.blogspot.com/2026/07/hola-que-tal-como-estas-jsjs.html"
+);
 
 ];
 
