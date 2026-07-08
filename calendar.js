@@ -1,212 +1,132 @@
-// =====================================
-// CALENDARIO DE ALIS 💜
-// =====================================
+const daysContainer = document.getElementById("days");
+const monthYear = document.getElementById("monthYear");
 
-const posts = [];
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
 
-function addPost(day, month, year, title, url) {
-    posts.push({
-        day,
-        month,
-        year,
-        title,
-        url
-    });
-}
 
-}addPost(
-5,
-7,
-2026,
-"Hola.",
-"https://admeliorali.blogspot.com/2026/07/hola.html"
-);
+let currentDate = new Date(2026, 6, 1); 
+// 6 = Julio (los meses empiezan en 0)
 
-addPost(
-7,
-7,
-2026,
-"Hellou HeLLOU",
-"https://admeliorali.blogspot.com/2026/07/hola-que-tal-como-estas-jsjs.html"
-);
 
-];
+function renderCalendar(){
 
-const months=[
-"Enero","Febrero","Marzo","Abril","Mayo","Junio",
-"Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
-];
+    daysContainer.innerHTML = "";
 
-const days=["L","M","M","J","V","S","D"];
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
 
-let current=new Date();
 
-function drawCalendar(){
+    const firstDay = new Date(year, month, 1).getDay();
 
-const year=current.getFullYear();
-const month=current.getMonth();
+    const lastDay = new Date(year, month + 1, 0).getDate();
 
-const first=new Date(year,month,1);
 
-const last=new Date(year,month+1,0);
+    const monthName = currentDate.toLocaleString(
+        "es-ES",
+        {
+            month:"long"
+        }
+    );
 
-let start=first.getDay();
 
-start=(start===0)?6:start-1;
+    monthYear.textContent =
+    `${monthName} ${year}`;
 
-let html=`
 
-<div class="header">
+    // espacios antes del día 1
+    for(let i = 0; i < firstDay; i++){
 
-<button onclick="changeMonth(-1)">❮</button>
+        const empty = document.createElement("div");
+        daysContainer.appendChild(empty);
 
-<div class="month">
+    }
 
-${months[month]} ${year}
 
-</div>
+    // crear días
+    for(let day = 1; day <= lastDay; day++){
 
-<button onclick="changeMonth(1)">❯</button>
+        const box = document.createElement("div");
 
-</div>
+        box.className = "day";
 
-<table>
 
-<tr>
+        const number = document.createElement("span");
 
-${days.map(d=>`<th>${d}</th>`).join("")}
+        number.textContent = day;
 
-</tr>
 
-<tr>
+        box.appendChild(number);
 
-`;
 
-for(let i=0;i<start;i++){
 
-html+="<td></td>";
+        // comprobar si hay publicación
+        const fullDate =
+        `${year}-${String(month+1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
 
-}
 
-for(let d=1;d<=last.getDate();d++){
+        const post = posts.find(
+            p => p.date === fullDate
+        );
 
-const post=posts.find(p=>
 
-p.day===d &&
-p.month===month+1 &&
-p.year===year
+        if(post){
 
-);
+            const heart = document.createElement("span");
 
-let cls="";
+            heart.textContent = "♡";
 
-const today=new Date();
+            heart.className = "heart";
 
-if(
-today.getDate()===d &&
-today.getMonth()===month &&
-today.getFullYear()===year
-){
 
-cls="today";
+            box.appendChild(heart);
+
+
+            box.onclick = () => {
+
+                window.open(
+                    post.url,
+                    "_blank"
+                );
+
+            };
+
+
+            box.title = post.title;
+
+        }
+
+
+        daysContainer.appendChild(box);
+
+    }
 
 }
 
-if(post){
 
-cls+=" hasPost";
 
-}
+prevBtn.onclick = () => {
 
-html+=`<td class="${cls}"
-data-day="${d}">
-${post ? `<div class="day-number">${d}</div><span class="heart"></span>` : `<div class="day-number">${d}</div>`}
-</td>`;
+    currentDate.setMonth(
+        currentDate.getMonth() - 1
+    );
 
-if((start+d)%7===0 && d!==last.getDate()){
+    renderCalendar();
 
-html+="</tr><tr>";
+};
 
-}
 
-}
 
-html+="</tr></table>";
+nextBtn.onclick = () => {
 
-document.getElementById("calendar").innerHTML=html;
+    currentDate.setMonth(
+        currentDate.getMonth() + 1
+    );
 
-addEvents();
+    renderCalendar();
 
-}
+};
 
-function changeMonth(n){
 
-current.setMonth(current.getMonth()+n);
 
-drawCalendar();
-
-}// ===============================
-// TOOLTIP + CLIC EN LAS ENTRADAS
-// ===============================
-
-function addEvents(){
-
-const tooltip=document.getElementById("tooltip");
-
-document.querySelectorAll("#calendar td").forEach(td=>{
-
-const day=parseInt(td.dataset.day);
-
-if(!day) return;
-
-const month=current.getMonth()+1;
-const year=current.getFullYear();
-
-const post=posts.find(p=>
-
-p.day===day &&
-p.month===month &&
-p.year===year
-
-);
-
-if(!post) return;
-
-td.addEventListener("mousemove",e=>{
-
-tooltip.style.display="block";
-
-tooltip.style.left=(e.pageX+15)+"px";
-
-tooltip.style.top=(e.pageY+15)+"px";
-
-tooltip.innerHTML=`
-<div style="font-size:15px;">${post.title}</div>
-
-<div style="font-size:11px;color:#777;margin-top:4px;">
-${day}/${month}/${year}
-</div>
-
-<div style="margin-top:6px;color:#8d74c8;">
-Haz clic para leer →
-</div>
-`;
-});
-
-td.addEventListener("mouseleave",()=>{
-
-tooltip.style.display="none";
-
-});
-
-td.addEventListener("click",()=>{
-
-window.open(post.url,"_blank");
-
-});
-
-});
-
-}
-
-drawCalendar();
+renderCalendar();
