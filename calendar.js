@@ -121,7 +121,7 @@ cls+=" hasPost";
 
 html+=`<td class="${cls}"
 data-day="${d}">
-${post?post.icon:d}
+${post?"♡":d}
 </td>`;
 
 if((start+d)%7===0 && d!==last.getDate()){
