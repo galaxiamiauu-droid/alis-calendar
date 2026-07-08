@@ -54,11 +54,14 @@ margin-top:15px;
 }
 
 .weekdays div{
-text-align:center;
-font-weight:700;
-color:#a27bc9;
-}
 
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#a989dd;
+
+}
 /* cuadritos de dias */
 .day{
     height:40px;
@@ -72,7 +75,7 @@ color:#a27bc9;
 
 .day:hover{
 background:#e7cfff;
-transform:translateY(-5px);
+transform:translateY(-2px);
 box-shadow:0 8px 15px rgba(170,120,220,.25);
 }
 
