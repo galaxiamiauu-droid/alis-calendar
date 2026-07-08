@@ -65,7 +65,9 @@ function renderCalendar(){
         `${year}-${String(month+1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
 
 
-      const post = null;
+      const post = posts.find(
+    p => p.date === fullDate
+);
 
 
         if(post){
