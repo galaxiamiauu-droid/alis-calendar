@@ -8,25 +8,22 @@ const posts = [
 day:5,
 month:7,
 year:2026,
-icon:"💜",
 title:"Hola.",
-url:"https://admeliorali.blogspot.com/"
+url:"https://admeliorali.blogspot.com/2026/07/hola.html"
 },
 
 {
-day:10,
+day:7,
 month:7,
 year:2026,
-icon:"🎵",
-title:"Mi Playlist",
-url:"https://admeliorali.blogspot.com/"
+title:"Hellou HeLLOU",
+url:"https://admeliorali.blogspot.com/2026/07/hola-que-tal-como-estas-jsjs.html"
 },
 
 {
 day:21,
 month:7,
 year:2026,
-icon:"🌸",
 title:"Mi dibujo",
 url:"https://admeliorali.blogspot.com/"
 }
@@ -121,7 +118,7 @@ cls+=" hasPost";
 
 html+=`<td class="${cls}"
 data-day="${d}">
-${post?"♡":d}
+${post?`<span class="heart"></span>`:d}
 </td>`;
 
 if((start+d)%7===0 && d!==last.getDate()){
