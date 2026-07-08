@@ -1,64 +1,102 @@
 body{
-    background:#f8f1ff;
-    font-family:Arial, sans-serif;
+background:#f8f1ff;
+font-family:'Nunito', sans-serif;
 }
 
-
+/* tarjeta principal */
 .calendar{
-    width:500px;
-    margin:50px auto;
-    background:white;
-    padding:30px;
-    border-radius:20px;
+width:500px;
+margin:50px auto;
+background:#fffdfd;
+padding:35px;
+border-radius:30px;
+box-shadow:0 10px 30px rgba(170,120,220,0.18);
+border:2px solid #f1ddff;
 }
 
-
+/* titulo y botones */
 .header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
+.header h2{
+font-family:'Caveat', cursive;
+font-size:42px;
+color:#9b6dcc;
+margin:0;
+}
 
 .header button{
-    border:none;
-    background:#ead7ff;
-    padding:10px;
-    border-radius:50%;
+border:none;
+background:#ead7ff;
+color:#8c5bb5;
+width:40px;
+height:40px;
+font-size:20px;
+border-radius:50%;
+cursor:pointer;
+transition:.3s;
 }
 
+.header button:hover{
+background:#d8b5ff;
+transform:rotate(10deg) scale(1.1);
+}
 
+/* nombres de dias */
 .weekdays,
 .days{
-    display:grid;
-    grid-template-columns:repeat(7,1fr);
-    gap:10px;
-    margin-top:20px;
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:10px;
+margin-top:20px;
 }
-
 
 .weekdays div{
-    text-align:center;
-    font-weight:bold;
+text-align:center;
+font-weight:700;
+color:#a27bc9;
 }
 
-
+/* cuadritos de dias */
 .day{
-    height:50px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:10px;
-    background:#f3e8ff;
-    cursor:pointer;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:15px;
+background:#f5eaff;
+color:#76528f;
+cursor:pointer;
+transition:.3s;
+position:relative;
+box-shadow:0 4px 8px rgba(190,150,230,.12);
 }
-
 
 .day:hover{
-    background:#e3c8ff;
+background:#e7cfff;
+transform:translateY(-5px);
+box-shadow:0 8px 15px rgba(170,120,220,.25);
 }
 
-
+/* corazon de publicaciones */
 .heart{
-    margin-left:5px;
+margin-left:5px;
+animation:latido 1.5s infinite;
+}
+
+@keyframes latido{
+
+```
+0%,100%{
+    transform:scale(1);
+}
+
+50%{
+    transform:scale(1.15);
+}
+```
+
 }
