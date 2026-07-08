@@ -4,8 +4,7 @@
 
 const posts = [];
 
-function addPost(day, month, year, title, url){
-
+function addPost(day, month, year, title, url) {
     posts.push({
         day,
         month,
@@ -13,6 +12,7 @@ function addPost(day, month, year, title, url){
         title,
         url
     });
+}
 
 }addPost(
 5,
