@@ -139,13 +139,17 @@ box-shadow:0 0 10px rgba(190,170,255,.6);
 
 .today{
 
-background:#cab5ff!important;
+background:#cdb6ff !important;
 
 color:white;
 
 font-weight:bold;
 
-box-shadow:0 0 15px rgba(180,150,255,.9);
+display:flex;
+align-items:center;
+justify-content:center;
+
+position:relative;
 
 }
 
