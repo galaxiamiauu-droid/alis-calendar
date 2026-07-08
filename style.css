@@ -209,93 +209,84 @@ animation:fade .25s;
 }
 .heart{
 
-dtd{
+td{
 position:relative;
 }
 
 .day-number{
-
 position:absolute;
-
 left:50%;
 top:50%;
-
 transform:translate(-50%,-50%);
-
 font-size:15px;
-
 z-index:2;
-
 }
+
 .heart{
-
 position:absolute;
-
-bottom:4px;
-
+bottom:5px;
 right:5px;
-
 width:7px;
 height:7px;
-
 background:#d1bbff;
-
 transform:rotate(-45deg);
-
 animation:pulse 2.5s infinite;
-
 }
 
 .heart::before,
 .heart::after{
-
 content:"";
-
 position:absolute;
-
 width:7px;
 height:7px;
-
 background:#d1bbff;
-
 border-radius:50%;
-
 }
 
 .heart::before{
-
 top:-3px;
-
 left:0;
-
 }
 
 .heart::after{
-
 left:3px;
-
 top:0;
-
 }
 
 @keyframes pulse{
 
 0%{
-
 transform:rotate(-45deg) scale(1);
-
 }
 
 50%{
-
-transform:rotate(-45deg) scale(1.18);
-
+transform:rotate(-45deg) scale(1.15);
 }
 
 100%{
-
 transform:rotate(-45deg) scale(1);
+}
 
 }
 
+#calendar::before{
+content:"୨୧";
+position:absolute;
+top:-12px;
+left:15px;
+background:white;
+padding:0 8px;
+color:#c3a5ff;
+font-size:18px;
+}
+
+#calendar::after{
+content:"♡";
+position:absolute;
+bottom:-12px;
+right:15px;
+background:white;
+padding:0 8px;
+color:#c3a5ff;
+font-size:18px;
 }
