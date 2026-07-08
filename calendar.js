@@ -172,15 +172,16 @@ tooltip.style.left=(e.pageX+15)+"px";
 tooltip.style.top=(e.pageY+15)+"px";
 
 tooltip.innerHTML=`
-<div style="font-size:15px;">${post.icon} ${post.title}</div>
+<div style="font-size:15px;">${post.title}</div>
+
 <div style="font-size:11px;color:#777;margin-top:4px;">
 ${day}/${month}/${year}
 </div>
+
 <div style="margin-top:6px;color:#8d74c8;">
 Haz clic para leer →
 </div>
 `;
-
 });
 
 td.addEventListener("mouseleave",()=>{
